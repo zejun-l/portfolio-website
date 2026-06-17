@@ -39,13 +39,13 @@
             color: #202124;
             white-space: nowrap;
             min-width: fit-content;
-            margin-left: -32px;
+            margin-left: -8px;
         }
 
         .top-bar-search {
             flex: 1;
             max-width: 500px;
-            margin-left: 120px;
+            margin-left: 140px;
         }
 
         .top-bar-actions {
@@ -153,7 +153,7 @@
             cursor: pointer;
             padding: 8px;
             color: #5f6368;
-            display: flex;
+            display: none;
             align-items: center;
         }
 
@@ -350,6 +350,29 @@
             gap: 16px;
         }
 
+        #skillsGrid {
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 12px;
+        }
+
+        #skillsGrid .project-card {
+            padding: 16px 12px;
+        }
+
+        #skillsGrid .project-card h3 {
+            font-size: 13px;
+        }
+
+        #skillsGrid .project-icon {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 8px;
+        }
+
+        #skillsGrid .project-icon .material-symbols-outlined {
+            font-size: 20px;
+        }
+
         .project-card {
             background-color: #ffffff;
             border: 1px solid #dadce0;
@@ -540,19 +563,12 @@
                         <h1>About me</h1>
                         <div style="max-width: 800px; margin-top: 32px;">
                             <p style="font-size: 16px; color: #5f6368; margin: 0 0 20px 0; line-height: 1.8;">
-                                I'm a designer and developer with a passion for creating intuitive, beautiful digital experiences. 
-                                With [X] years of experience in UX/UI design and web development, I've helped startups and established 
-                                companies alike bring their visions to life.
-                            </p>
-                            <p style="font-size: 16px; color: #5f6368; margin: 0 0 20px 0; line-height: 1.8;">
-                                My approach combines user research, clean design principles, and modern development practices. 
-                                I believe great design is not just about aesthetics—it's about solving real problems for real people.
+                                Hi, I'm Zejun (aka Ting Ting)! I'm a junior at the University of Michigan studying User Experience Design. I'm passionate about exploring the unique problems that arise from the convergence of different disciplines in UX and designing experiences that spark joy :)
                             </p>
                             <h3 style="font-size: 18px; font-weight: 600; color: #202124; margin: 32px 0 16px 0;">Skills</h3>
-                            <p style="font-size: 16px; color: #5f6368; margin: 0; line-height: 1.8;">
-                                UI/UX Design, Web Design, Prototyping, Front-end Development, React, HTML/CSS, JavaScript, 
-                                Figma, Adobe XD, User Research, Wireframing
-                            </p>
+                            <div class="projects-grid" id="skillsGrid" style="margin-top: 16px;">
+                                <!-- Skills will be inserted here -->
+                            </div>
                         </div>
                     </div>
 
@@ -671,6 +687,20 @@
             },
         ];
 
+        const skills = [
+            { id: 1, title: 'UI/UX Design' },
+            { id: 2, title: 'Web Design' },
+            { id: 3, title: 'Prototyping' },
+            { id: 4, title: 'Front-end Development' },
+            { id: 5, title: 'React' },
+            { id: 6, title: 'HTML/CSS' },
+            { id: 7, title: 'JavaScript' },
+            { id: 8, title: 'Figma' },
+            { id: 9, title: 'Adobe XD' },
+            { id: 10, title: 'User Research' },
+            { id: 11, title: 'Wireframing' },
+        ];
+
         function getIcon(iconName) {
             const icons = {
                 home: '<span class="material-symbols-outlined">home</span>',
@@ -721,6 +751,8 @@
                 renderFeaturedProjects();
             } else if (pageId === 'projects') {
                 renderProjects(projects);
+            } else if (pageId === 'about') {
+                renderSkills();
             }
         }
 
@@ -806,6 +838,18 @@
                     }
                 });
             });
+        }
+
+        function renderSkills() {
+            const grid = document.getElementById('skillsGrid');
+            grid.innerHTML = skills.map(skill => `
+                <div class="project-card">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">star</span>
+                    </div>
+                    <h3>${skill.title}</h3>
+                </div>
+            `).join('');
         }
 
         let sidebarOpen = true;
