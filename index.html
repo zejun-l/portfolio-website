@@ -191,14 +191,45 @@
         }
 
         .avatar {
+            background: none;
+            border: none;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #5f6368;
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            min-height: 26px;
+            padding: 0;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .avatar svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .avatar:hover {
+            color: #202124;
+            background-color: transparent;
         }
 
         body.dark-mode .avatar {
             color: #e8e8e8;
+        }
+
+        body.dark-mode .avatar:hover {
+            color: #ffffff;
+            background-color: transparent;
         }
 
         .theme-toggle {
@@ -211,11 +242,31 @@
             align-items: center;
             justify-content: center;
             transition: color 0.2s;
-            font-size: 32px;
+            font-size: 26px;
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            min-height: 26px;
+        }
+
+        .theme-toggle svg {
+            width: 100%;
+            height: 100%;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        .theme-toggle .moon-icon {
+            fill: currentColor;
+            stroke: none;
         }
 
         .theme-toggle:hover {
             color: #202124;
+            background-color: transparent;
         }
 
         body.dark-mode .theme-toggle {
@@ -224,10 +275,52 @@
 
         body.dark-mode .theme-toggle:hover {
             color: #ffffff;
+            background-color: transparent;
+        }
+
+        .social-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            color: #5f6368;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+            font-size: 26px;
+            text-decoration: none;
+            width: 26px;
+            height: 26px;
+            min-width: 26px;
+            min-height: 26px;
+        }
+
+        .social-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .social-icon:hover {
+            color: #202124;
+            background-color: transparent;
+        }
+
+        body.dark-mode .social-icon {
+            color: #e8e8e8;
+        }
+
+        body.dark-mode .social-icon:hover {
+            color: #ffffff;
+            background-color: transparent;
         }
 
         .top-bar-actions {
             gap: 24px;
+        }
+
+        .top-bar-actions a:nth-child(3) {
+            margin-right: 24px;
         }
 
         /* Dark Mode Styles */
@@ -263,6 +356,136 @@
 
         body.dark-mode #skillsGrid .project-card h3 {
             color: #ffffff !important;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+        }
+
+        body.dark-mode .top-bar {
+            background-color: #1e1e1e;
+            border-bottom-color: #333;
+        }
+
+        body.dark-mode .top-bar-branding {
+            color: #e8e8e8;
+        }
+
+        body.dark-mode .top-bar .search-bar {
+            background-color: #383838;
+            border-color: #444;
+        }
+
+        body.dark-mode .top-bar .search-bar input {
+            color: #e8e8e8;
+        }
+
+        body.dark-mode .top-bar .search-bar input::placeholder {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode .project-card h3 {
+            color: #ffffff !important;
+        }
+
+        body.dark-mode #skillsGrid .project-card {
+            background-color: #2a2a2a;
+            border-color: #3a3a3a;
+        }
+
+        body.dark-mode #skillsGrid .project-card h3 {
+            color: #ffffff !important;
+        }
+
+        body.dark-mode #skillsGrid .project-icon {
+            color: #b0b0b0;
+        }
+
+        #page-about h3 {
+            color: #202124;
+        }
+
+        body.dark-mode #page-about h3 {
+            color: #ffffff !important;
+        }
+
+        #page-about > div > p {
+            color: #5f6368 !important;
+        }
+
+        body.dark-mode #page-about > div > p {
+            color: #b0b0b0 !important;
+        }
+
+        #backBtn {
+            color: #5f6368;
+        }
+
+        body.dark-mode #backBtn {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode #backBtn:hover {
+            color: #e8e8e8;
+        }
+
+        body.dark-mode .project-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border-color: #999999;
+            background-color: #2a2a2a;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .interactive-item:hover {
+            background-color: #2a2a2a;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-color: #999999;
+        }
+
+        body.dark-mode #skillsGrid .project-card:hover {
+            background-color: #282828;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        #page-project-detail h3 {
+            color: #202124;
+        }
+
+        body.dark-mode #page-project-detail h3 {
+            color: #ffffff !important;
+        }
+
+        #page-project-detail p {
+            color: #5f6368;
+        }
+
+        body.dark-mode #page-project-detail p {
+            color: #b0b0b0 !important;
+        }
+
+        #page-project-detail > div > div:first-of-type > div > div {
+            background-color: #ffffff;
+            border-color: #dadce0;
+        }
+
+        body.dark-mode #page-project-detail > div > div:first-of-type > div > div {
+            background-color: #1e1e1e !important;
+            border-color: #333 !important;
+        }
+
+        body.dark-mode #page-project-detail > div > div:first-of-type > div > div p {
+            color: #b0b0b0 !important;
+        }
+
+        #projectPhoto {
+            background-color: #e8eef5;
+        }
+
+        body.dark-mode #projectPhoto {
+            background-color: #2a2a2a !important;
+            color: #888888 !important;
         }
 
         body.dark-mode .avatar {
@@ -482,8 +705,10 @@
         }
 
         .project-card:hover {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            border-color: #c6c6c6;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-color: #888888;
+            background-color: #f5f5f5;
+            transition: all 0.3s ease;
         }
 
         body.dark-mode .project-card {
@@ -492,8 +717,10 @@
         }
 
         body.dark-mode .project-card:hover {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            border-color: #444;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border-color: #999999;
+            background-color: #2a2a2a;
+            transition: all 0.3s ease;
         }
 
         .interactive-item {
@@ -648,14 +875,37 @@
         </div>
 
         <div class="top-bar-actions">
-            <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
-                <span class="sun-icon material-symbols-outlined">light_mode</span>
-                <span class="moon-icon material-symbols-outlined" style="display: none;">dark_mode</span>
+            <button class="social-icon" title="Email">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z"/>
+                </svg>
             </button>
 
-            <div class="avatar">
-                <span class="material-symbols-outlined" style="font-size: 32px;">account_circle</span>
-            </div>
+            <a href="https://www.linkedin.com/in/zejli/" target="_blank" class="social-icon" title="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.5 2H3.5C2.67 2 2 2.67 2 3.5V20.5C2 21.33 2.67 22 3.5 22H20.5C21.33 22 22 21.33 22 20.5V3.5C22 2.67 21.33 2 20.5 2ZM8 19H5V9H8V19ZM6.5 7.5C5.5 7.5 4.7 6.7 4.7 5.8C4.7 4.9 5.5 4.1 6.5 4.1C7.5 4.1 8.3 4.9 8.3 5.8C8.3 6.7 7.5 7.5 6.5 7.5ZM19 19H16V13.5C16 12.5 15.5 11.7 14.5 11.7C13.7 11.7 13.2 12.2 13 12.7C12.9 12.9 12.9 13.2 12.9 13.5V19H9.9V9H12.9V10.2C13.3 9.5 14.3 8.5 16 8.5C18.5 8.5 19 10.2 19 12.5V19Z"/>
+                </svg>
+            </a>
+
+            <a href="https://github.com/zejun-l" target="_blank" class="social-icon" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+
+            <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22"/>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+                </svg>
+            </button>
+
+            <button class="avatar" title="Profile" onclick="showPage('page-about')">
+                <img src="https://zejun-l.github.io/portfolio/profile%20photo.jpg" alt="Profile">
+            </button>
         </div>
     </div>
 
@@ -709,27 +959,34 @@
                     <!-- Project Detail Page -->
                     <div id="page-project-detail" class="page" style="display: none;">
                         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 32px;">
-                            <button id="backBtn" style="background: none; border: none; cursor: pointer; padding: 8px; color: #5f6368; font-size: 20px;">←</button>
+                            <button id="backBtn" style="background: none; border: none; cursor: pointer; padding: 8px; color: #5f6368; font-size: 20px; transition: color 0.2s; display: flex; align-items: center; justify-content: center;"><span class="material-symbols-outlined">arrow_back</span></button>
                             <h1 id="projectDetailTitle" style="margin: 0; flex: 1;"></h1>
                         </div>
                         <div>
-                            <div style="background-color: #f8f9fa; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
-                                <p id="projectDetailDescription" style="font-size: 16px; color: #5f6368; line-height: 1.6; margin: 0 0 16px 0;"></p>
-                                <div style="display: flex; gap: 16px; align-items: center;">
-                                    <div>
-                                        <p style="font-size: 12px; color: #9aa0a6; margin: 0 0 4px 0; text-transform: uppercase;">Date</p>
-                                        <p id="projectDetailDate" style="font-size: 16px; color: #202124; margin: 0; font-weight: 500;"></p>
-                                    </div>
-                                    <div>
-                                        <p style="font-size: 12px; color: #9aa0a6; margin: 0 0 4px 0; text-transform: uppercase;">Status</p>
-                                        <p id="projectDetailStatus" style="font-size: 16px; color: #202124; margin: 0; font-weight: 500;"></p>
-                                    </div>
+                            <!-- Photo Placeholder -->
+                            <div id="projectPhoto" style="width: 100%; height: 300px; background-color: #e8eef5; border-radius: 12px; margin-bottom: 32px; display: flex; align-items: center; justify-content: center; color: #9aa0a6; font-size: 14px;">
+                                Project photo
+                            </div>
+
+                            <!-- Project Meta Information -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px;">
+                                <div style="padding: 16px; background-color: #ffffff; border: 1px solid #dadce0; border-radius: 8px;">
+                                    <p style="font-size: 12px; color: #9aa0a6; margin: 0 0 8px 0; text-transform: uppercase; font-weight: 500;">Role</p>
+                                    <p id="projectRole" style="font-size: 16px; color: #202124; margin: 0; font-weight: 500;"></p>
+                                </div>
+                                <div style="padding: 16px; background-color: #ffffff; border: 1px solid #dadce0; border-radius: 8px;">
+                                    <p style="font-size: 12px; color: #9aa0a6; margin: 0 0 8px 0; text-transform: uppercase; font-weight: 500;">Team Size</p>
+                                    <p id="projectTeamSize" style="font-size: 16px; color: #202124; margin: 0; font-weight: 500;"></p>
+                                </div>
+                                <div style="padding: 16px; background-color: #ffffff; border: 1px solid #dadce0; border-radius: 8px;">
+                                    <p style="font-size: 12px; color: #9aa0a6; margin: 0 0 8px 0; text-transform: uppercase; font-weight: 500;">Timeline</p>
+                                    <p id="projectTimeline" style="font-size: 16px; color: #202124; margin: 0; font-weight: 500;"></p>
                                 </div>
                             </div>
-                            <h3 style="font-size: 18px; font-weight: 600; color: #202124; margin: 0 0 16px 0;">About this project</h3>
-                            <p style="font-size: 16px; color: #5f6368; line-height: 1.8;">
-                                Add more details about your project here. You can customize this section to include information about the project's goals, technologies used, challenges overcome, and results achieved.
-                            </p>
+
+                            <!-- About Section -->
+                            <h3 style="font-size: 18px; font-weight: 600; color: #202124; margin: 32px 0 16px 0;">About this project</h3>
+                            <p id="projectDetailDescription" style="font-size: 16px; color: #5f6368; line-height: 1.8; margin: 0;"></p>
                         </div>
                     </div>
 
@@ -747,50 +1004,6 @@
                         </div>
                     </div>
 
-                    <!-- Contact Page -->
-                    <div id="page-contact" class="page" style="display: none;">
-                        <h1>Contact</h1>
-                        <div style="margin-top: 32px;">
-                            <p style="font-size: 16px; color: #5f6368; margin: 0 0 32px 0; line-height: 1.8;">
-                                I'd love to hear from you. Whether you have a project in mind, want to collaborate, or just want to chat, 
-                                feel free to reach out.
-                            </p>
-                            <div style="display: flex; flex-direction: column; gap: 12px;">
-                                <!-- Email -->
-                                <div class="interactive-item" style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; background-color: #ffffff; border: 1px solid #dadce0; border-radius: 8px; cursor: pointer;">
-                                    <div style="width: 48px; height: 48px; background-color: #f8f9fa; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                        <span class="material-symbols-outlined" style="font-size: 28px; color: #5f6368;">mail</span>
-                                    </div>
-                                    <div style="flex: 1; min-width: 0;">
-                                        <p style="font-size: 12px; color: #9aa0a6; margin: 0 0 4px 0; text-transform: uppercase; font-weight: 500;">Email</p>
-                                        <p style="font-size: 15px; color: #202124; margin: 0; font-weight: 500; overflow: hidden; text-overflow: ellipsis;">your.email@example.com</p>
-                                    </div>
-                                </div>
-
-                                <!-- LinkedIn -->
-                                <div class="interactive-item" style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; background-color: #ffffff; border: 1px solid #dadce0; border-radius: 8px; cursor: pointer;">
-                                    <div style="width: 48px; height: 48px; background-color: #f8f9fa; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                        <span class="material-symbols-outlined" style="font-size: 28px; color: #5f6368;">work</span>
-                                    </div>
-                                    <div style="flex: 1; min-width: 0;">
-                                        <p style="font-size: 12px; color: #9aa0a6; margin: 0 0 4px 0; text-transform: uppercase; font-weight: 500;">LinkedIn</p>
-                                        <p style="font-size: 15px; color: #202124; margin: 0; font-weight: 500; overflow: hidden; text-overflow: ellipsis;">linkedin.com/in/yourprofile</p>
-                                    </div>
-                                </div>
-
-                                <!-- GitHub -->
-                                <div class="interactive-item" style="display: flex; align-items: center; gap: 16px; padding: 12px 16px; background-color: #ffffff; border: 1px solid #dadce0; border-radius: 8px; cursor: pointer;">
-                                    <div style="width: 48px; height: 48px; background-color: #f8f9fa; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                        <span class="material-symbols-outlined" style="font-size: 28px; color: #5f6368;">code_blocks</span>
-                                    </div>
-                                    <div style="flex: 1; min-width: 0;">
-                                        <p style="font-size: 12px; color: #9aa0a6; margin: 0 0 4px 0; text-transform: uppercase; font-weight: 500;">GitHub</p>
-                                        <p style="font-size: 15px; color: #202124; margin: 0; font-weight: 500; overflow: hidden; text-overflow: ellipsis;">github.com/yourprofile</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -800,9 +1013,8 @@
         const navigationItems = [
             { icon: 'home', label: 'Home', id: 'home' },
             { icon: 'folder', label: 'Projects', id: 'projects' },
-            { icon: 'user', label: 'About me', id: 'about' },
+            { icon: 'user', label: 'About', id: 'about' },
             { icon: 'description', label: 'Resume', id: 'resume' },
-            { icon: 'mail', label: 'Contact', id: 'contact' },
         ];
 
         const projects = [
@@ -813,6 +1025,10 @@
                 date: 'Mar 2024',
                 status: 'Active',
                 tags: ['UXD', 'UI/UX'],
+                role: 'Lead Designer',
+                teamSize: '5 people',
+                timeline: 'Jan 2024 - Mar 2024',
+                fullDescription: 'Created a comprehensive design system that unified our product design across all platforms. This system serves as the single source of truth for components, patterns, and guidelines, significantly improving design consistency and development efficiency.',
             },
             {
                 id: 2,
@@ -821,6 +1037,10 @@
                 date: 'Feb 2024',
                 status: 'Completed',
                 tags: ['UXD', 'UXR', 'UI/UX'],
+                role: 'UX/UI Designer',
+                teamSize: '8 people',
+                timeline: 'Oct 2023 - Jan 2024',
+                fullDescription: 'Led the redesign of our mobile application, conducting user research, creating wireframes, and designing the new visual interface. The redesign resulted in improved user engagement and positive feedback from beta testers.',
             },
             {
                 id: 3,
@@ -829,6 +1049,10 @@
                 date: 'Jan 2024',
                 status: 'Completed',
                 tags: ['UI/UX'],
+                role: 'Product Designer',
+                teamSize: '6 people',
+                timeline: 'Nov 2023 - Dec 2023',
+                fullDescription: 'Designed an intuitive analytics dashboard that allows users to visualize complex data in real-time. The dashboard features interactive charts, customizable widgets, and comprehensive reporting capabilities.',
             },
             {
                 id: 4,
@@ -837,6 +1061,10 @@
                 date: 'Dec 2023',
                 status: 'Completed',
                 tags: ['Article'],
+                role: 'Brand Designer',
+                teamSize: '3 people',
+                timeline: 'Oct 2023 - Nov 2023',
+                fullDescription: 'Developed comprehensive brand guidelines including a new color palette, typography system, and visual identity standards. These guidelines ensure consistent brand representation across all marketing and product materials.',
             },
         ];
 
@@ -859,6 +1087,7 @@
                 home: '<span class="material-symbols-outlined">home</span>',
                 folder: '<span class="material-symbols-outlined">folder</span>',
                 user: '<span class="material-symbols-outlined">person</span>',
+                info: '<span class="material-symbols-outlined">info</span>',
                 description: '<span class="material-symbols-outlined">description</span>',
                 mail: '<span class="material-symbols-outlined">mail</span>',
             };
@@ -958,9 +1187,10 @@
             document.getElementById('page-project-detail').style.display = 'block';
             
             document.getElementById('projectDetailTitle').textContent = project.title;
-            document.getElementById('projectDetailDescription').textContent = project.description;
-            document.getElementById('projectDetailDate').textContent = project.date;
-            document.getElementById('projectDetailStatus').textContent = project.status;
+            document.getElementById('projectRole').textContent = project.role || 'N/A';
+            document.getElementById('projectTeamSize').textContent = project.teamSize || 'N/A';
+            document.getElementById('projectTimeline').textContent = project.timeline || 'N/A';
+            document.getElementById('projectDetailDescription').textContent = project.fullDescription || project.description;
         }
 
         document.getElementById('backBtn').addEventListener('click', () => {
