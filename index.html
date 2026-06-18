@@ -370,50 +370,6 @@
             color: #b0b0b0 !important;
         }
 
-        .about-intro {
-            display: flex;
-            align-items: flex-start;
-            gap: 24px;
-            margin-top: 32px;
-        }
-
-        .about-photo-placeholder {
-            width: 180px;
-            min-width: 180px;
-            height: 220px;
-            border: 1px solid #dadce0;
-            border-radius: 12px;
-            background-color: #f8f9fa;
-            color: #9aa0a6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            overflow: hidden;
-        }
-
-        .about-copy {
-            flex: 1;
-            min-width: 0;
-        }
-
-        body.dark-mode .about-photo-placeholder {
-            background-color: #1e1e1e;
-            border-color: #333333;
-            color: #9aa0a6;
-        }
-
-        @media (max-width: 700px) {
-            .about-intro {
-                flex-direction: column;
-            }
-
-            .about-photo-placeholder {
-                width: 100%;
-                max-width: 240px;
-            }
-        }
-
         .project-back-btn {
             background: none;
             border: none;
@@ -946,11 +902,11 @@
         }
 
         .top-bar-actions {
-            gap: 4px;
+            gap: 10px;
         }
 
         .top-bar-actions a:nth-child(3) {
-            margin-right: 8px;
+            margin-right: 20px;
         }
 
         .search-bar {
@@ -1314,101 +1270,177 @@
         }
 
 
-        /* Responsive layout inspired by Google Drive mobile */
-        html {
-            min-width: 0;
+        /* About page photo/text layout */
+        .about-intro {
+            display: grid;
+            grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+            gap: 32px;
+            align-items: start;
+            margin-top: 32px;
         }
 
-        body {
-            min-height: 100vh;
-            min-height: 100dvh;
+        .about-photo-placeholder {
+            min-height: 260px;
+            border: 1px solid var(--surface-border);
+            border-radius: 12px;
+            background-color: #f1f3f4;
+            color: #9aa0a6;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            text-align: center;
         }
 
-        .container,
-        .main-content,
-        .content-area,
-        .content-wrapper,
-        .page,
-        .projects-grid,
-        .project-card,
-        .top-bar,
-        .search-bar {
+        .about-copy {
             min-width: 0;
         }
 
-        .container {
-            flex: 1;
+        body.dark-mode .about-photo-placeholder {
+            background-color: #2a2a2a;
+            color: #b0b0b0;
+            border-color: var(--surface-border);
+        }
+
+        /* Mobile sticky navigation and responsive layout refinements */
+        :root {
+            --top-bar-height: 65px;
         }
 
         @media (max-width: 1100px) {
             .top-bar-search {
-                margin-left: 40px;
-                max-width: 420px;
+                margin-left: 48px;
+                max-width: 460px;
             }
 
             .sidebar {
-                width: 208px;
+                width: 220px;
             }
         }
 
         @media (max-width: 900px) {
             .top-bar {
-                padding: 10px 16px;
-                gap: 12px;
+                padding: 12px 18px;
             }
 
             .top-bar-search {
-                margin-left: 0;
-                max-width: none;
+                margin-left: 24px;
+                max-width: 420px;
             }
 
             .sidebar {
-                width: 184px;
+                width: 200px;
             }
 
-            .content-area {
-                padding: 28px 20px;
+            .content-area h1 {
+                font-size: 26px;
+                line-height: 1.25;
             }
 
-            .projects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            .top-bar-branding {
+                font-size: 21px;
+            }
+
+            .nav-item {
+                font-size: 13.5px;
+            }
+
+            .search-bar input {
+                font-size: 13.5px;
+            }
+
+            #homeSubtitle,
+            #projectCount,
+            .project-count,
+            .empty-state {
+                font-size: 13px !important;
+            }
+
+            .project-card h3 {
+                font-size: 14.5px;
+                line-height: 1.35;
+            }
+
+            .project-card p {
+                font-size: 13px;
+                line-height: 1.55;
+            }
+
+            .project-footer,
+            .status-badge,
+            .project-tag {
+                font-size: 11.5px;
+            }
+
+            #aboutText,
+            #projectDetailDescription {
+                font-size: 15.5px !important;
+                line-height: 1.75 !important;
+            }
+
+            #page-about h3,
+            #page-project-detail h3 {
+                font-size: 17px !important;
+                line-height: 1.35;
+            }
+
+            #projectRole,
+            #projectTeamSize,
+            #projectTimeline {
+                font-size: 15px !important;
+            }
+
+            #projectMetaLabel1,
+            #projectMetaLabel2,
+            #projectMetaLabel3 {
+                font-size: 11.5px !important;
             }
         }
 
         @media (max-width: 760px) {
+            body {
+                overflow-x: hidden;
+                font-size: 14px;
+            }
+
             .top-bar {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
                 height: auto;
+                min-height: 112px;
+                padding: 12px 16px;
+                display: flex;
                 flex-wrap: wrap;
-                padding: 8px 12px 10px 12px;
-                gap: 8px;
+                gap: 8px 12px;
+                align-items: center;
             }
 
             .top-bar-branding {
                 order: 1;
-                font-size: 20px;
                 flex: 1 1 auto;
                 min-width: 0;
+                margin-left: 0;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                font-size: 20px;
+                line-height: 1.2;
             }
 
             .top-bar-actions {
                 order: 2;
                 flex: 0 0 auto;
-                gap: 0;
-                margin-left: 0;
+                margin-left: auto;
+                gap: 8px;
             }
 
             .top-bar-actions a:nth-child(3) {
-                margin-right: 0;
+                margin-right: 18px;
             }
 
-            .social-icon,
-            .theme-toggle,
-            .avatar,
-            .project-back-btn {
+            .top-bar-actions .social-icon,
+            .top-bar-actions .theme-toggle,
+            .top-bar-actions .avatar {
                 width: 36px;
                 height: 36px;
                 min-width: 36px;
@@ -1419,49 +1451,50 @@
             .top-bar-search {
                 order: 3;
                 flex: 1 0 100%;
+                max-width: none;
                 width: 100%;
                 margin-left: 0;
             }
 
-            .search-bar {
-                width: 100%;
-            }
-
             .container {
-                flex-direction: column;
+                display: block;
                 min-height: auto;
             }
 
             .sidebar {
-                position: static;
-                z-index: 90;
+                position: sticky;
+                top: var(--top-bar-height, 112px);
+                z-index: 900;
                 width: 100%;
                 height: auto;
-                padding: 8px 0;
-                border-right: none;
-                border-bottom: 1px solid var(--surface-border);
+                padding: 8px 16px;
                 overflow-x: auto;
                 overflow-y: hidden;
-                -webkit-overflow-scrolling: touch;
+                border-right: none;
+                border-bottom: 1px solid var(--surface-border);
+                scrollbar-width: none;
+            }
+
+            .sidebar::-webkit-scrollbar {
+                display: none;
             }
 
             .sidebar-content {
-                padding: 0 12px;
+                padding: 0;
             }
 
             .nav {
                 flex-direction: row;
                 gap: 8px;
-                width: max-content;
-                min-width: 100%;
+                min-width: max-content;
             }
 
             .nav-item {
-                min-height: 36px;
-                padding: 8px 14px;
-                border-radius: 18px;
-                white-space: nowrap;
                 flex: 0 0 auto;
+                min-height: 38px;
+                padding: 8px 14px;
+                white-space: nowrap;
+                font-size: 13px;
             }
 
             .nav-icon,
@@ -1473,21 +1506,20 @@
 
             .main-content {
                 height: auto;
-                min-height: calc(100vh - 128px);
-                min-height: calc(100dvh - 128px);
+                min-height: auto;
                 overflow: visible;
             }
 
             .content-area {
                 height: auto;
-                min-height: inherit;
+                min-height: calc(100vh - var(--top-bar-height, 112px) - 55px);
                 overflow: visible;
                 padding: 24px 16px;
             }
 
             .content-wrapper {
                 max-width: none;
-                min-height: inherit;
+                width: 100%;
             }
 
             .content-area h1 {
@@ -1495,14 +1527,76 @@
                 line-height: 1.25;
             }
 
+            .search-bar input {
+                font-size: 13px;
+            }
+
+            #homeSubtitle,
+            #projectCount,
+            .project-count,
+            .empty-state {
+                font-size: 12.5px !important;
+                line-height: 1.45;
+            }
+
             .projects-grid,
             #skillsGrid {
                 grid-template-columns: 1fr;
-                gap: 12px;
             }
 
-            .project-card {
-                padding: 16px;
+            .project-card h3 {
+                font-size: 14px;
+                line-height: 1.35;
+            }
+
+            .project-card p {
+                font-size: 12.5px;
+                line-height: 1.55;
+            }
+
+            #skillsGrid .project-card h3 {
+                font-size: 12.5px;
+            }
+
+            .project-footer,
+            .status-badge,
+            .project-tag {
+                font-size: 11px;
+            }
+
+            .about-intro {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .about-photo-placeholder {
+                width: 100%;
+                min-height: 220px;
+                font-size: 13px;
+            }
+
+            #aboutText,
+            #projectDetailDescription {
+                font-size: 15px !important;
+                line-height: 1.7 !important;
+            }
+
+            #page-about h3,
+            #page-project-detail h3 {
+                font-size: 16px !important;
+                line-height: 1.35;
+            }
+
+            #projectRole,
+            #projectTeamSize,
+            #projectTimeline {
+                font-size: 14.5px !important;
+            }
+
+            #projectMetaLabel1,
+            #projectMetaLabel2,
+            #projectMetaLabel3 {
+                font-size: 11px !important;
             }
 
             #projectPhoto {
@@ -1511,80 +1605,54 @@
 
             #resumeFrame {
                 height: 70vh !important;
-                min-height: 420px;
+            }
+
+            .email-popover {
+                right: -8px;
+                width: min(292px, calc(100vw - 32px));
+            }
+
+            .email-popover-title {
+                font-size: 13.5px;
+            }
+
+            .email-popover-address,
+            .email-popover-action {
+                font-size: 12.5px;
             }
 
             .site-footer {
-                margin-top: 40px;
-                padding-top: 16px;
+                font-size: 11.5px;
+                line-height: 1.45;
             }
 
             .site-footer p {
                 white-space: normal;
             }
-
-            .email-popover {
-                position: fixed;
-                top: 64px;
-                left: 12px;
-                right: 12px;
-                width: auto;
-                max-width: none;
-            }
         }
 
         @media (max-width: 520px) {
+            .top-bar {
+                min-height: 108px;
+                padding: 10px 12px;
+                gap: 8px;
+            }
+
             .top-bar-branding {
                 font-size: 18px;
             }
 
-            .content-area {
-                padding: 20px 12px;
+            .top-bar-actions {
+                gap: 6px;
             }
 
-            .project-footer {
-                align-items: flex-start;
-                gap: 10px;
-                flex-direction: column;
+            .top-bar-actions a:nth-child(3) {
+                margin-right: 14px;
             }
 
-            .project-tags-footer {
-                justify-content: flex-start;
-            }
-
-            .about-intro {
-                gap: 18px;
-                margin-top: 24px;
-            }
-
-            .about-photo-placeholder {
-                max-width: none;
-                height: 200px;
-            }
-
-            .email-popover-actions {
-                flex-direction: column;
-            }
-
-            .email-popover-action {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .top-bar {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-
-            .top-bar-branding {
-                font-size: 17px;
-            }
-
-            .social-icon,
-            .theme-toggle,
-            .avatar,
-            .project-back-btn {
+            .top-bar-actions .social-icon,
+            .top-bar-actions .theme-toggle,
+            .top-bar-actions .avatar {
                 width: 34px;
                 height: 34px;
                 min-width: 34px;
@@ -1592,17 +1660,141 @@
                 padding: 7px;
             }
 
+            .top-bar-search {
+                min-width: 100%;
+            }
+
+            .search-bar input {
+                font-size: 12.5px;
+            }
+
+            .sidebar {
+                padding: 8px 12px;
+            }
+
+            .nav {
+                gap: 6px;
+            }
+
             .nav-item {
                 padding: 8px 12px;
-                gap: 8px;
+                font-size: 12.5px;
+            }
+
+            .content-area {
+                padding: 20px 12px;
             }
 
             .content-area h1 {
                 font-size: 22px;
+                line-height: 1.25;
+            }
+
+            #homeSubtitle,
+            #projectCount,
+            .project-count,
+            .empty-state {
+                font-size: 12px !important;
             }
 
             .project-card {
-                padding: 14px;
+                padding: 16px;
+            }
+
+            .project-card h3 {
+                font-size: 13.5px;
+            }
+
+            .project-card p {
+                font-size: 12.5px;
+            }
+
+            #skillsGrid .project-card h3 {
+                font-size: 12.5px;
+            }
+
+            .about-photo-placeholder {
+                min-height: 200px;
+            }
+
+            #aboutText,
+            #projectDetailDescription {
+                font-size: 14.5px !important;
+                line-height: 1.65 !important;
+            }
+
+            #page-about h3,
+            #page-project-detail h3 {
+                font-size: 15.5px !important;
+            }
+
+            #projectRole,
+            #projectTeamSize,
+            #projectTimeline {
+                font-size: 14px !important;
+            }
+
+            #projectPhoto {
+                height: 200px !important;
+            }
+
+            .site-footer {
+                font-size: 11px;
+                line-height: 1.45;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .top-bar {
+                padding: 10px;
+            }
+
+            .top-bar-branding {
+                font-size: 17px;
+            }
+
+            .top-bar-actions {
+                gap: 4px;
+            }
+
+            .top-bar-actions a:nth-child(3) {
+                margin-right: 10px;
+            }
+
+            .top-bar-actions .social-icon,
+            .top-bar-actions .theme-toggle,
+            .top-bar-actions .avatar {
+                width: 32px;
+                height: 32px;
+                min-width: 32px;
+                min-height: 32px;
+                padding: 6px;
+            }
+
+            .nav-item {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+
+            .content-area h1 {
+                font-size: 21px;
+            }
+
+            .project-card h3 {
+                font-size: 13px;
+            }
+
+            .project-card p,
+            #aboutText,
+            #projectDetailDescription {
+                font-size: 14px !important;
+            }
+
+            .project-footer,
+            .status-badge,
+            .project-tag,
+            .site-footer {
+                font-size: 10.5px;
             }
         }
 
@@ -1713,19 +1905,14 @@
                     <!-- About Page -->
                     <div id="page-about" class="page" style="display: none;">
                         <h1 id="aboutTitle">About me</h1>
-                        <div class="about-intro">
-                            <div class="about-photo-placeholder" aria-label="About photo placeholder">
-                                Photo placeholder
+                        <div style="margin-top: 32px;">
+                            <p id="aboutText" style="font-size: 16px; color: #5f6368; margin: 0 0 20px 0; line-height: 1.8;">
+                                Hi, I'm Zejun (aka Ting Ting)! I'm a junior at the University of Michigan studying User Experience Design. I'm passionate about exploring the unique problems that arise from the convergence of different disciplines in UX and designing experiences that spark joy :)
+                            </p>
+                            <h3 id="skillsTitle" style="font-size: 18px; font-weight: 600; color: #202124; margin: 32px 0 16px 0;">Skills</h3>
+                            <div class="projects-grid" id="skillsGrid" style="margin-top: 16px;">
+                                <!-- Skills will be inserted here -->
                             </div>
-                            <div class="about-copy">
-                                <p id="aboutText" style="font-size: 16px; color: #5f6368; margin: 0 0 20px 0; line-height: 1.8; white-space: pre-line;">Hi, I'm Zejun (aka Ting Ting)! I'm a junior at the University of Michigan studying User Experience Design. I'm passionate about exploring the unique problems that arise from the convergence of different disciplines in UX and designing experiences that spark joy :)
-
-Outside of school and design, I play a lot of ultimate frisbee! I also enjoy fishing (trying to get into fly fishing this summer), birdwatching, reading looong fantasy and sci-fi books (check out The Priory of the Orange Tree), and watching food reviews on YouTube.</p>
-                            </div>
-                        </div>
-                        <h3 id="skillsTitle" style="font-size: 18px; font-weight: 600; color: #202124; margin: 32px 0 16px 0;">Skills</h3>
-                        <div class="projects-grid" id="skillsGrid" style="margin-top: 16px;">
-                            <!-- Skills will be inserted here -->
                         </div>
                     </div>
 
@@ -1806,6 +1993,7 @@ Outside of school and design, I play a lot of ultimate frisbee! I also enjoy fis
                 skills = portfolioData.skills || [];
                 applyPortfolioData();
                 renderNavigation();
+                updateStickyOffsets();
                 showPage('home');
             } catch (error) {
                 console.error(error);
@@ -1857,6 +2045,13 @@ Outside of school and design, I play a lot of ultimate frisbee! I also enjoy fis
         function setText(id, value) {
             const element = document.getElementById(id);
             if (element) element.textContent = value;
+        }
+
+        function updateStickyOffsets() {
+            const topBar = document.querySelector('.top-bar');
+            if (topBar) {
+                document.documentElement.style.setProperty('--top-bar-height', `${topBar.offsetHeight}px`);
+            }
         }
 
         function escapeHTML(value) {
@@ -1985,17 +2180,8 @@ Outside of school and design, I play a lot of ultimate frisbee! I also enjoy fis
                 .trim();
         }
 
-        function getCompactSearchText(value) {
+        function compactSearchText(value) {
             return normalizeSearchText(value).replace(/\s+/g, '');
-        }
-
-        function searchTextMatches(searchText, query) {
-            const normalizedSearchText = normalizeSearchText(searchText);
-            const normalizedQuery = normalizeSearchText(query);
-            const compactSearchText = getCompactSearchText(searchText);
-            const compactQuery = getCompactSearchText(query);
-
-            return normalizedSearchText.includes(normalizedQuery) || compactSearchText.includes(compactQuery);
         }
 
         function getProjectSearchText(project) {
@@ -2049,7 +2235,11 @@ Outside of school and design, I play a lot of ultimate frisbee! I also enjoy fis
                 })),
             ];
 
-            return searchableItems.filter(item => searchTextMatches(item.searchText, normalizedQuery));
+            const compactQuery = compactSearchText(query);
+            return searchableItems.filter(item => {
+                const compactItemText = compactSearchText(item.searchText);
+                return item.searchText.includes(normalizedQuery) || compactItemText.includes(compactQuery);
+            });
         }
 
         function renderSearchResults(results, query) {
@@ -2302,6 +2492,9 @@ Outside of school and design, I play a lot of ultimate frisbee! I also enjoy fis
             renderSearchResults(getSearchResults(query), query);
         });
 
+        window.addEventListener('resize', updateStickyOffsets);
+        window.addEventListener('orientationchange', updateStickyOffsets);
+        window.addEventListener('load', updateStickyOffsets);
         loadPortfolioData();
     </script>
 </body>
