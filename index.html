@@ -1270,534 +1270,85 @@
         }
 
 
-        /* About page photo/text layout */
-        .about-intro {
-            display: grid;
-            grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
-            gap: 32px;
-            align-items: start;
-            margin-top: 32px;
+
+        /* Nav/icon spacing refinements */
+        .nav-item {
+            gap: 8px;
         }
 
-        .about-photo-placeholder {
-            min-height: 260px;
-            border: 1px solid var(--surface-border);
-            border-radius: 12px;
-            background-color: #f1f3f4;
-            color: #9aa0a6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            text-align: center;
+        /* Larger top-bar actions for better visibility across viewports */
+        .social-icon,
+        .theme-toggle,
+        .avatar {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            min-height: 48px;
         }
 
-        .about-copy {
-            min-width: 0;
+        .social-icon,
+        .theme-toggle {
+            padding: 8px;
         }
 
-        body.dark-mode .about-photo-placeholder {
-            background-color: #2a2a2a;
-            color: #b0b0b0;
-            border-color: var(--surface-border);
+        .avatar {
+            padding: 4px;
         }
 
-        /* Mobile sticky navigation and responsive layout refinements */
-        :root {
-            --top-bar-height: 65px;
+        .top-bar {
+            height: auto;
+            min-height: 64px;
+            padding-top: 8px;
+            padding-bottom: 8px;
         }
 
-        @media (max-width: 1100px) {
-            .top-bar-search {
-                margin-left: 48px;
-                max-width: 460px;
-            }
-
-            .sidebar {
-                width: 220px;
-            }
+        .top-bar-actions {
+            gap: 14px;
         }
 
-        @media (max-width: 900px) {
-            .top-bar {
-                padding: 12px 18px;
-            }
-
-            .top-bar-search {
-                margin-left: 24px;
-                max-width: 420px;
-            }
-
-            .sidebar {
-                width: 200px;
-            }
-
-            .content-area h1 {
-                font-size: 26px;
-                line-height: 1.25;
-            }
-
-            .top-bar-branding {
-                font-size: 21px;
-            }
-
-            .nav-item {
-                font-size: 13.5px;
-            }
-
-            .search-bar input {
-                font-size: 13.5px;
-            }
-
-            #homeSubtitle,
-            #projectCount,
-            .project-count,
-            .empty-state {
-                font-size: 13px !important;
-            }
-
-            .project-card h3 {
-                font-size: 14.5px;
-                line-height: 1.35;
-            }
-
-            .project-card p {
-                font-size: 13px;
-                line-height: 1.55;
-            }
-
-            .project-footer,
-            .status-badge,
-            .project-tag {
-                font-size: 11.5px;
-            }
-
-            #aboutText,
-            #projectDetailDescription {
-                font-size: 15.5px !important;
-                line-height: 1.75 !important;
-            }
-
-            #page-about h3,
-            #page-project-detail h3 {
-                font-size: 17px !important;
-                line-height: 1.35;
-            }
-
-            #projectRole,
-            #projectTeamSize,
-            #projectTimeline {
-                font-size: 15px !important;
-            }
-
-            #projectMetaLabel1,
-            #projectMetaLabel2,
-            #projectMetaLabel3 {
-                font-size: 11.5px !important;
-            }
+        .top-bar-actions a:nth-child(3) {
+            margin-right: 24px;
         }
 
-        @media (max-width: 760px) {
-            body {
-                overflow-x: hidden;
-                font-size: 14px;
+        .email-popover-wrapper {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            min-height: 48px;
+        }
+
+        @media (max-width: 480px) {
+            .social-icon,
+            .theme-toggle,
+            .avatar,
+            .email-popover-wrapper {
+                width: 44px;
+                height: 44px;
+                min-width: 44px;
+                min-height: 44px;
             }
 
-            .top-bar {
-                position: sticky;
-                top: 0;
-                z-index: 1000;
-                height: auto;
-                min-height: 112px;
-                padding: 12px 16px;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px 12px;
-                align-items: center;
-            }
-
-            .top-bar-branding {
-                order: 1;
-                flex: 1 1 auto;
-                min-width: 0;
-                margin-left: 0;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                font-size: 20px;
-                line-height: 1.2;
-            }
-
-            .top-bar-actions {
-                order: 2;
-                flex: 0 0 auto;
-                margin-left: auto;
-                gap: 8px;
-            }
-
-            .top-bar-actions a:nth-child(3) {
-                margin-right: 18px;
-            }
-
-            .top-bar-actions .social-icon,
-            .top-bar-actions .theme-toggle,
-            .top-bar-actions .avatar {
-                width: 36px;
-                height: 36px;
-                min-width: 36px;
-                min-height: 36px;
+            .social-icon,
+            .theme-toggle {
                 padding: 7px;
             }
 
-            .top-bar-search {
-                order: 3;
-                flex: 1 0 100%;
-                max-width: none;
-                width: 100%;
-                margin-left: 0;
-            }
-
-            .container {
-                display: block;
-                min-height: auto;
-            }
-
-            .sidebar {
-                position: sticky;
-                top: var(--top-bar-height, 112px);
-                z-index: 900;
-                width: 100%;
-                height: auto;
-                padding: 8px 16px;
-                overflow-x: auto;
-                overflow-y: hidden;
-                border-right: none;
-                border-bottom: 1px solid var(--surface-border);
-                scrollbar-width: none;
-            }
-
-            .sidebar::-webkit-scrollbar {
-                display: none;
-            }
-
-            .sidebar-content {
-                padding: 0;
-            }
-
-            .nav {
-                flex-direction: row;
-                gap: 8px;
-                min-width: max-content;
-            }
-
-            .nav-item {
-                flex: 0 0 auto;
-                min-height: 38px;
-                padding: 8px 14px;
-                white-space: nowrap;
-                font-size: 13px;
-            }
-
-            .nav-icon,
-            .nav-icon .material-symbols-outlined {
-                width: 20px;
-                height: 20px;
-                font-size: 20px;
-            }
-
-            .main-content {
-                height: auto;
-                min-height: auto;
-                overflow: visible;
-            }
-
-            .content-area {
-                height: auto;
-                min-height: calc(100vh - var(--top-bar-height, 112px) - 55px);
-                overflow: visible;
-                padding: 24px 16px;
-            }
-
-            .content-wrapper {
-                max-width: none;
-                width: 100%;
-            }
-
-            .content-area h1 {
-                font-size: 24px;
-                line-height: 1.25;
-            }
-
-            .search-bar input {
-                font-size: 13px;
-            }
-
-            #homeSubtitle,
-            #projectCount,
-            .project-count,
-            .empty-state {
-                font-size: 12.5px !important;
-                line-height: 1.45;
-            }
-
-            .projects-grid,
-            #skillsGrid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-card h3 {
-                font-size: 14px;
-                line-height: 1.35;
-            }
-
-            .project-card p {
-                font-size: 12.5px;
-                line-height: 1.55;
-            }
-
-            #skillsGrid .project-card h3 {
-                font-size: 12.5px;
-            }
-
-            .project-footer,
-            .status-badge,
-            .project-tag {
-                font-size: 11px;
-            }
-
-            .about-intro {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .about-photo-placeholder {
-                width: 100%;
-                min-height: 220px;
-                font-size: 13px;
-            }
-
-            #aboutText,
-            #projectDetailDescription {
-                font-size: 15px !important;
-                line-height: 1.7 !important;
-            }
-
-            #page-about h3,
-            #page-project-detail h3 {
-                font-size: 16px !important;
-                line-height: 1.35;
-            }
-
-            #projectRole,
-            #projectTeamSize,
-            #projectTimeline {
-                font-size: 14.5px !important;
-            }
-
-            #projectMetaLabel1,
-            #projectMetaLabel2,
-            #projectMetaLabel3 {
-                font-size: 11px !important;
-            }
-
-            #projectPhoto {
-                height: 220px !important;
-            }
-
-            #resumeFrame {
-                height: 70vh !important;
-            }
-
-            .email-popover {
-                right: -8px;
-                width: min(292px, calc(100vw - 32px));
-            }
-
-            .email-popover-title {
-                font-size: 13.5px;
-            }
-
-            .email-popover-address,
-            .email-popover-action {
-                font-size: 12.5px;
-            }
-
-            .site-footer {
-                font-size: 11.5px;
-                line-height: 1.45;
-            }
-
-            .site-footer p {
-                white-space: normal;
-            }
-        }
-
-        @media (max-width: 520px) {
-            .top-bar {
-                min-height: 108px;
-                padding: 10px 12px;
-                gap: 8px;
-            }
-
-            .top-bar-branding {
-                font-size: 18px;
+            .avatar {
+                padding: 3px;
             }
 
             .top-bar-actions {
-                gap: 6px;
+                gap: 10px;
             }
 
             .top-bar-actions a:nth-child(3) {
-                margin-right: 14px;
+                margin-right: 16px;
             }
 
-            .top-bar-actions .social-icon,
-            .top-bar-actions .theme-toggle,
-            .top-bar-actions .avatar {
-                width: 34px;
-                height: 34px;
-                min-width: 34px;
-                min-height: 34px;
-                padding: 7px;
-            }
-
-            .top-bar-search {
-                min-width: 100%;
-            }
-
-            .search-bar input {
-                font-size: 12.5px;
-            }
-
-            .sidebar {
-                padding: 8px 12px;
-            }
-
-            .nav {
+            .nav-item {
                 gap: 6px;
             }
-
-            .nav-item {
-                padding: 8px 12px;
-                font-size: 12.5px;
-            }
-
-            .content-area {
-                padding: 20px 12px;
-            }
-
-            .content-area h1 {
-                font-size: 22px;
-                line-height: 1.25;
-            }
-
-            #homeSubtitle,
-            #projectCount,
-            .project-count,
-            .empty-state {
-                font-size: 12px !important;
-            }
-
-            .project-card {
-                padding: 16px;
-            }
-
-            .project-card h3 {
-                font-size: 13.5px;
-            }
-
-            .project-card p {
-                font-size: 12.5px;
-            }
-
-            #skillsGrid .project-card h3 {
-                font-size: 12.5px;
-            }
-
-            .about-photo-placeholder {
-                min-height: 200px;
-            }
-
-            #aboutText,
-            #projectDetailDescription {
-                font-size: 14.5px !important;
-                line-height: 1.65 !important;
-            }
-
-            #page-about h3,
-            #page-project-detail h3 {
-                font-size: 15.5px !important;
-            }
-
-            #projectRole,
-            #projectTeamSize,
-            #projectTimeline {
-                font-size: 14px !important;
-            }
-
-            #projectPhoto {
-                height: 200px !important;
-            }
-
-            .site-footer {
-                font-size: 11px;
-                line-height: 1.45;
-            }
         }
-
-        @media (max-width: 380px) {
-            .top-bar {
-                padding: 10px;
-            }
-
-            .top-bar-branding {
-                font-size: 17px;
-            }
-
-            .top-bar-actions {
-                gap: 4px;
-            }
-
-            .top-bar-actions a:nth-child(3) {
-                margin-right: 10px;
-            }
-
-            .top-bar-actions .social-icon,
-            .top-bar-actions .theme-toggle,
-            .top-bar-actions .avatar {
-                width: 32px;
-                height: 32px;
-                min-width: 32px;
-                min-height: 32px;
-                padding: 6px;
-            }
-
-            .nav-item {
-                padding: 8px 10px;
-                font-size: 12px;
-            }
-
-            .content-area h1 {
-                font-size: 21px;
-            }
-
-            .project-card h3 {
-                font-size: 13px;
-            }
-
-            .project-card p,
-            #aboutText,
-            #projectDetailDescription {
-                font-size: 14px !important;
-            }
-
-            .project-footer,
-            .status-badge,
-            .project-tag,
-            .site-footer {
-                font-size: 10.5px;
-            }
-        }
-
 
     </style>
 </head>
